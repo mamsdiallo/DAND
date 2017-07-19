@@ -1,0 +1,1 @@
+"0","model_f = lm(formula = height_inches ~ hand_length_inches,data = h_f)"

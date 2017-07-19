@@ -1,0 +1,14 @@
+Data Analysis Process
+1. Questions
+2. Data Wrangling
+3. Explore
+4. Conclusion
+5. Communicate
+
+1. Questions:
+a. Correlation between data
+b. Does gender equality influence/favor GDP or life expectency
+c. Data accuracy and missing data
+d. what events impacted some changes in indicators (oil crisis, revolutions)
+e. How to split periods in change of economic periods
+f. What groupings make sense (third world, etc..)

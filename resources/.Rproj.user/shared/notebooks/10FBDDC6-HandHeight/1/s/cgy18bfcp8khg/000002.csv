@@ -1,0 +1,2 @@
+"0","h_m = subset(h,Gender==""M"")"
+"0","h_f = subset(h,Gender==""F"")"

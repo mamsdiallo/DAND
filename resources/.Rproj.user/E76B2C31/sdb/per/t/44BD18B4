@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Hand length (in);Height (in);Gender\n7.5;71;M\n7.625;68.5;M\n7.5625;67;M\n7;61;F\n7.625;67;F\n6.625;62;F\n6.875;65;F\n7.625;70.86;M\n7.25;59;F\n7.5;70;M\n6.5625;63;F\n8.25;73;M\n7.625;74;M\n7.5;73;M\n7.5625;69;M\n6.875;67;F\n7;65;M\n6.75;63.5;F\n7.75;68.5;M\n7.875;75.5;M\n",
+    "created" : 1499023101076.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2600003518",
+    "id" : "44BD18B4",
+    "lastKnownWriteTime" : 1499021652,
+    "last_content_update" : 1499021652,
+    "path" : "~/GitHub/DataAnalystNanodegree/data/HandHeight.csv",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "text"
+}

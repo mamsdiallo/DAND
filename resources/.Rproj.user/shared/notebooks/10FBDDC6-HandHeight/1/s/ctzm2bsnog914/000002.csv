@@ -1,0 +1,3 @@
+"0","h = read.csv(""../data/HandHeight.csv"",sep = "";"")"
+"0","colnames(h) <- c(""hand_length_inches"",""height_inches"",""Gender"")"
+"0","df = tbl_df(h)"

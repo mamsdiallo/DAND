@@ -1,0 +1,43 @@
+---
+title: "R Notebook"
+output: html_document
+---
+
+```{r needed resources}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r read file}
+h = read.csv("../data/HandHeight.csv",sep = ";")
+colnames(h) <- c("hand_length_inches","height_inches","Gender")
+df = tbl_df(h)
+```
+
+```{r Analysis}
+str(h)
+names(h)
+```
+
+```{r}
+head(h)
+summary(h)
+```
+
+```{r subsetting}
+h_m = subset(h,Gender=="M")
+h_f = subset(h,Gender=="F")
+```
+
+```{r}
+model_f = lm(formula = height_inches ~ hand_length_inches,data = h_f)
+```
+
+```{r}
+summary(model_f)
+```
+
+```{r}
+plot(x = h$hand_length_inches, y = h$height_inches, type="p")
+```
+

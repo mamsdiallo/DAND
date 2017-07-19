@@ -1,0 +1,7 @@
+Data Analysis Process
+1. Questions
+relation between weather factors and use of subway
+relation between day of the week and use of subway
+what are crowdy hours
+what are the top used stations
+what is the maximum flows (/hour) 

@@ -1,0 +1,19 @@
+"0","```r
+library(dplyr)
+```"
+"1","le package ã¤¼ã¸±dplyrã¤¼ã¸² a æ”¼ã¸¹tæ”¼ã¸¹ compilæ”¼ã¸¹ avec la version R 3.3.2
+Attachement du package : ã¤¼ã¸±dplyrã¤¼ã¸²
+
+The following objects are masked from ã¤¼ã¸±package:statsã¤¼ã¸²:
+
+    filter, lag
+
+The following objects are masked from ã¤¼ã¸±package:baseã¤¼ã¸²:
+
+    intersect, setdiff, setequal, union
+"
+"0","```r
+library(ggplot2)
+```"
+"1","le package ã¤¼ã¸±ggplot2ã¤¼ã¸² a æ”¼ã¸¹tæ”¼ã¸¹ compilæ”¼ã¸¹ avec la version R 3.3.2
+"

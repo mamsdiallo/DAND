@@ -1,0 +1,12 @@
+"0","```r
+data1 = read.csv(\"../data/IBMStock.csv\")
+IBM = tbl_df(data1)
+data2 = read.csv(\"../data/GEStock.csv\")
+GE = tbl_df(data2)
+data3 = read.csv(\"../data/ProcterGambleStock.csv\")
+ProcterGamble = tbl_df(data3)
+data4 = read.csv(\"../data/CocaColaStock.csv\")
+CocaCola = tbl_df(data4)
+data5 = read.csv(\"../data/BoeingStock.csv\")
+Boeing = tbl_df(data5)
+```"
