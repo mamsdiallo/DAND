@@ -19,8 +19,7 @@ Please see the test function for the expected return format
 
 import xlrd
 from zipfile import ZipFile
-datafile = "./quizz11/2013_ERCOT_Hourly_Load_Data.xls"
-
+datafile = "2013_ercot_hourly_load_data"
 
 def open_zip(datafile):
     with ZipFile('{0}.zip'.format(datafile), 'r') as myzip:
@@ -28,7 +27,7 @@ def open_zip(datafile):
 
 
 def parse_file(datafile):
-    workbook = xlrd.open_workbook(datafile)
+    workbook = xlrd.open_workbook('{0}.xls'.format(datafile))
     sheet = workbook.sheet_by_index(0)
 
     ### example on how you can get the data
@@ -62,13 +61,40 @@ def parse_file(datafile):
             'minvalue': 0,
             'avgcoast': 0
     }
+
+#    import numpy as np
+
+    sheet_data = [[sheet.cell_value(r, col) 
+                for col in range(sheet.ncols)] 
+                    for r in range(sheet.nrows)]
+
+    # "Number of rows in the sheet:", 
+    nrows = sheet.nrows
+    print "------------------------"
+    
+    # "Get a slice of values in column 3, from rows 1-3:"
+    coast = sheet.col_values(1, start_rowx=1, end_rowx=None)
+    tm = sheet.col_values(0, start_rowx=1, end_rowx=None)    
+    
+    data['maxvalue'] = max(coast)
+    data['minvalue'] = min(coast)
+    data['avgcoast'] = sum(coast)/float(len(coast))
+    n1 = coast.index(max(coast))
+    maxtime = tm[n1]
+    data['maxtime'] = xlrd.xldate_as_tuple(maxtime, 0)
+    n2 = coast.index(min(coast))
+    mintime = tm[n2]
+    data['mintime'] = xlrd.xldate_as_tuple(mintime, 0)
+    
     return data
 
 
 def test():
     open_zip(datafile)
     data = parse_file(datafile)
-
+    import pprint
+    
+    pprint.pprint(data)
     assert data['maxtime'] == (2013, 8, 13, 17, 0, 0)
     assert round(data['maxvalue'], 10) == round(18779.02551, 10)
 

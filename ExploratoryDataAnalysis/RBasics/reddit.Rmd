@@ -1,0 +1,44 @@
+---
+title: "Untitled"
+author: "Mamadou Diallo"
+date: "2 août 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+# Load data
+reddit <- read.csv('reddit.csv')
+```
+
+```{r}
+str(reddit)
+summary(reddit)
+```
+
+```{r}
+reddit
+```
+
+```{r}
+table(reddit$employment.status)
+```
+
+```{r}
+summary(reddit)
+```
+
+```{r}
+levels(reddit$age.range)
+```
+
+```{r}
+library("ggplot2")
+qplot(data = reddit,x = age.range)
+```
+

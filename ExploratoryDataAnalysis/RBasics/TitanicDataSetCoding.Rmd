@@ -1,0 +1,53 @@
+---
+title: "Titanic Coding"
+author: "Mamadou Diallo"
+date: "2 août 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# required libraries
+library(ggplot2)
+```
+
+
+```{r}
+# Get the data
+df = read.csv("../../2.IntroToDataAnalysis/Investigate Titanic Dataset/data/titanic-data.csv")
+```
+
+
+```{r}
+# Analysis
+summary(df)
+```
+
+```{r}
+str(df)
+```
+
+
+```{r}
+qplot(data = df,x = Age)
+```
+
+```{r}
+qplot(data = df,x = Fare)
+```
+
+```{r}
+qplot(data = df,x = Sex)
+```
+
+```{r}
+qplot(data = df,x = Embarked)
+```
+
+```{r}
+table(df$Embarked)
+```
+
