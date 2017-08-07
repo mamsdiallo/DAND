@@ -11751,80 +11751,9 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Titanic-Dataset-Analysis">Titanic Dataset Analysis<a class="anchor-link" href="#Titanic-Dataset-Analysis">&#182;</a></h1><p>Creation Date:21/11/2017</p>
+<h1 id="Titanic-Dataset-Analysis">Titanic Dataset Analysis<a class="anchor-link" href="#Titanic-Dataset-Analysis">&#182;</a></h1><p>Creation Date:21/07/2017</p>
 <p><strong>Author</strong>: Mamadou Diallo</p>
-<p><strong>Email</strong>: mams.diallo@gmail.com</p>
-<p>Source code for analysis (separated file): '<strong><em>Titanic Dataset Notebook Coding.ipynb</em></strong>'</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Table-of-content:">Table of content:<a class="anchor-link" href="#Table-of-content:">&#182;</a></h2><ol>
-<li>Dataset Selected</li>
-<li>Questions</li>
-<li>Data Description</li>
-<li>Data Wrangling</li>
-<li>Analysis and Answers to Questions</li>
-<li>Documentation</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Figure-List">Figure List<a class="anchor-link" href="#Figure-List">&#182;</a></h2><ul>
-<li>Figure 1: Distribution of Age feature</li>
-<li>Figure 2: Distribution of Fare feature</li>
-<li>Figure 3: Relation Fare vs Age</li>
-<li>Figure 4: Distribution of Embarked feature</li>
-<li>Figure 5: Percentage of Missing values among features</li>
-<li>Figure 6: Pearson's Correlation of Features</li>
-<li>Figure 7: Class Factor</li>
-<li>Figure 8: Sex Factor</li>
-<li>Figure 9: Embarked Factor</li>
-<li>Figure 10: Title Factor</li>
-<li>Figure 11: Children Factor</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Check-list">Check list<a class="anchor-link" href="#Check-list">&#182;</a></h2><ol>
-<li>A PDF or HTML file containing your analysis. This file should include: -&gt; DONE <ol>
-<li>A note specifying which dataset you analyzed -&gt; DONE</li>
-<li>A statement of the question(s) you posed -&gt; DONE</li>
-<li>A description of what you did to investigate those questions</li>
-<li>Documentation of any data wrangling you did -&gt; DONE</li>
-<li>Summary statistics and plots communicating your final results</li>
-</ol>
-</li>
-<li>Code you used to perform your analysis. If you used an Jupyter notebook, you can submit your .ipynb. Otherwise, you should submit the code separately in .py file(s). -&gt; DONE</li>
-<li>A list of:
-Web sites, 
-books, 
-forums, 
-blog posts, 
-github repositories, 
-etc. 
-that you referred to or used in creating your submission (add N/A if you did not use any such resources). -&gt; DONE</li>
-</ol>
-<p>Try and suggest questions that promote looking at relationships between multiple variables. -&gt; CORRELATION: DONE</p>
-<p>You should aim to analyze at least one dependent variable and three independent variables in your investigation.</p>
-<p>Make sure you use NumPy and Pandas where they are appropriate!</p>
+<p>Source code for analysis (separate file): '<strong><em>Titanic Dataset Notebook Coding.ipynb</em></strong>'</p>
 
 </div>
 </div>
@@ -11835,7 +11764,7 @@ that you referred to or used in creating your submission (add N/A if you did not
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Dataset-selected">Dataset selected<a class="anchor-link" href="#Dataset-selected">&#182;</a></h2><p>In the frame of Udacity Data Analyst Nanodegree this project is conducted using the Titanic Dataset found <a href="https://d17h27t6h515a5.cloudfront.net/topher/2016/September/57e9a84c_titanic-data/titanic-data.csv">here</a></p>
-<p>The kaggle site (ref. [9]) contains the original source of the data and its description.</p>
+<p>The kaggle site - cf. [kaggleTitanic] in documentation section - contains the original source of the data and its description.</p>
 
 </div>
 </div>
@@ -11845,10 +11774,10 @@ that you referred to or used in creating your submission (add N/A if you did not
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h2><p><strong>Q1. What are the most important factors to survival (e.g. Age, Sex, ...)?</strong> -&gt; ANSWERED</p>
-<p><strong>Q2. Did they apply the protocol "Women and Children first"?</strong> -&gt; ANSWERED.</p>
-<p><strong>Q3. Is there Correlation among factors?</strong> -&gt; ANSWERED</p>
-<p><strong>Q4. How to deal with missing values?</strong> -&gt; ANSWERED</p>
+<h2 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h2><p><strong>Q1. What are the most important factors to survival (e.g. Sex, Class, ...)</strong></p>
+<p><strong>Q2. Did they apply the protocol "Women and Children first"?</strong></p>
+<p><strong>Q3. Is there any linear correlation among factors?</strong></p>
+<p><strong>Q4. How to deal with missing values?</strong></p>
 
 </div>
 </div>
@@ -11859,13 +11788,13 @@ that you referred to or used in creating your submission (add N/A if you did not
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Approach-to-investigate-the-questions">Approach to investigate the questions<a class="anchor-link" href="#Approach-to-investigate-the-questions">&#182;</a></h2><ul>
-<li><p>Q1: Use of grouping techniques by categories (Age, Sex, etc.)</p>
+<li><p>Q1: Use of grouping techniques by categories (e.g. Sex, Embarked, etc.). We will use programming based on document [Hdbk]. We'll use plots with the help of document [Plot].</p>
 </li>
-<li><p>Q2: The computation of the survival rate by category (Sex and Age) and investigation in the documentation if the protocol was enforced.</p>
+<li><p>Q2: The computation of the survival numbers by category (e.g. Sex, Embarked) and investigation (such as Document [Wikipedia]) if the protocol was enforced.</p>
 </li>
-<li><p>Q3: The use of the Pearson's correlation matrix would be usefull.</p>
+<li><p>Q3: The use of the Pearson's correlation matrix would be usefull. And an example is provided in document [HM]</p>
 </li>
-<li><p>Q4: Measure the % of missing values per feature (i.e. variable). Use of articles on the subject</p>
+<li><p>Q4: Measure the % of missing values per feature (i.e. variable). Use of articles on the subject such as document [MV].</p>
 </li>
 </ul>
 
@@ -11877,17 +11806,7 @@ that you referred to or used in creating your submission (add N/A if you did not
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ISSUES">ISSUES<a class="anchor-link" href="#ISSUES">&#182;</a></h2><h4 id="I1.-How-to-fill-missing-values-or-workaround?--&gt;-solved">I1. How to fill missing values or workaround? -&gt; solved<a class="anchor-link" href="#I1.-How-to-fill-missing-values-or-workaround?--&gt;-solved">&#182;</a></h4><h4 id="Q2b.-Children-first-also?--&gt;-solved">Q2b. Children first also? -&gt; solved<a class="anchor-link" href="#Q2b.-Children-first-also?--&gt;-solved">&#182;</a></h4><h4 id="Q3.-Does-the-marrital-status-or-title---stored-in-name---count-or-not(i.e.-Miss-vs-Mrs)?--&gt;-done">Q3. Does the marrital status or title - stored in name - count or not(i.e. Miss vs Mrs)? -&gt; done<a class="anchor-link" href="#Q3.-Does-the-marrital-status-or-title---stored-in-name---count-or-not(i.e.-Miss-vs-Mrs)?--&gt;-done">&#182;</a></h4><h4 id="Q5.-Data-Quality-or-accuracy-among-data-and-its-impact?">Q5. Data Quality or accuracy among data and its impact?<a class="anchor-link" href="#Q5.-Data-Quality-or-accuracy-among-data-and-its-impact?">&#182;</a></h4><h4 id="Q7.-Fare-meaning?-is-it-by-person-or-group-pricing?-see-Cardeza-and-maiden.-Linked-to-ticket?">Q7. Fare meaning? is it by person or group pricing? see Cardeza and maiden. Linked to ticket?<a class="anchor-link" href="#Q7.-Fare-meaning?-is-it-by-person-or-group-pricing?-see-Cardeza-and-maiden.-Linked-to-ticket?">&#182;</a></h4><h4 id="Q8.-What-is-the-meaning-if-many-cabin-for-an-individual?--&gt;-done">Q8. What is the meaning if many cabin for an individual? -&gt; done<a class="anchor-link" href="#Q8.-What-is-the-meaning-if-many-cabin-for-an-individual?--&gt;-done">&#182;</a></h4><h4 id="Q9.-Is-it-possible-to-identify-crew-members?-from-external-database,-from-hint-(fare,-ticket)?-What-about-their-survival-ratio?">Q9. Is it possible to identify crew members? from external database, from hint (fare, ticket)? What about their survival ratio?<a class="anchor-link" href="#Q9.-Is-it-possible-to-identify-crew-members?-from-external-database,-from-hint-(fare,-ticket)?-What-about-their-survival-ratio?">&#182;</a></h4><h4 id="Q10.-Some-people-have-the-same-ticket-and-what-is-the-meaning?--&gt;-done">Q10. Some people have the same ticket and what is the meaning? -&gt; done<a class="anchor-link" href="#Q10.-Some-people-have-the-same-ticket-and-what-is-the-meaning?--&gt;-done">&#182;</a></h4><h4 id="Q11.-is-there-pseudo-or-alias?">Q11. is there pseudo or alias?<a class="anchor-link" href="#Q11.-is-there-pseudo-or-alias?">&#182;</a></h4><p>cf. <a href="https://www.encyclopedia-titanica.org/titanic-victim/lionel-leonard.html">https://www.encyclopedia-titanica.org/titanic-victim/lionel-leonard.html</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Data-Description">3. Data Description<a class="anchor-link" href="#3.-Data-Description">&#182;</a></h2><p>Data Dictionary</p>
+<h2 id="Data-Description">Data Description<a class="anchor-link" href="#Data-Description">&#182;</a></h2><p>The following Data Dictionary is given from Document [kaggleTitanic]</p>
 <table>
 <thead><tr>
 <th>Variable</th>
@@ -11946,13 +11865,9 @@ that you referred to or used in creating your submission (add N/A if you did not
 <td>Port of Embarkation</td>
 <td>C = Cherbourg, Q = Queenstown, S = Southampton</td>
 </tr>
-<tr>
-<td>pclass</td>
-<td>: A proxy for socio-economic status (SES)</td>
-<td>1st = Upper, 2nd = Middle, 3rd = Lower</td>
-</tr>
 </tbody>
 </table>
+<p>pclass is A proxy for socio-economic status (SES). 1st = Upper, 2nd = Middle, 3rd = Lower</p>
 <p>Age is fractional if less than 1. If the age is estimated, is it in the form of xx.5</p>
 <p>sibsp: The dataset defines family relations in this way...
 Sibling = brother, sister, stepbrother, stepsister
@@ -11970,23 +11885,28 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-Wrangling">Data Wrangling<a class="anchor-link" href="#Data-Wrangling">&#182;</a></h2><p>Convert/Split nominal features: we use methodology proposed in document [2]</p>
-<p>In order to analyse the correlation between features it is preferrable to convert these categorical features into boolean features.</p>
+<h2 id="Data-Wrangling">Data Wrangling<a class="anchor-link" href="#Data-Wrangling">&#182;</a></h2><p>To convert and Split nominal features, we use methodology proposed in document [Edx]. Pandas .get_dummies() method allows us to completely replace a single, nominal feature with multiple boolean indicator features.</p>
+<p>In addition, when analysing the correlation between features it is preferrable to convert these categorical features into boolean features.</p>
 <ul>
-<li>Sex split into 2 boolean features: 'Sex_female','Sex_male' </li>
-<li>Embarked split into 3 variables boolean features: 'Embarked_C', 'Embarked_Q','Embarked_S'</li>
-<li>We create a new Title feature from Name feature as proposed in Document []. Then we split it into boolean features: Title_Mr, Title_Master, Title_Mrs, Title_Miss.</li>
-<li>We create the boolean Child feature (passenger with age under 18) to answer the question relate Women and Children first protocol.</li>
+<li><p>Sex split into 2 boolean features: 'Sex_female','Sex_male'. Done in SOURCE CODE <em>§ Change feature representation for Sex</em></p>
+</li>
+<li><p>Embarked split into 3 variables boolean features: 'Embarked_C', 'Embarked_Q','Embarked_S'. Done  in SOURCE CODE <em>§ Change feature representation for Embarked</em></p>
+</li>
+<li><p>We create a new Title feature from Name feature as proposed in Document [FE]. Then we split it into boolean features: Title_Mr, Title_Master, Title_Mrs, Title_Miss. Done in SOURCE CODE <em>§ Change feature representation for Title</em></p>
+</li>
+<li><p>We create the boolean Child feature (passenger with age under 18) to answer the question relate Women and Children first protocol. Done in SOURCE CODE <em>§ Build new feature Child</em></p>
+</li>
 </ul>
 <p>We don't need to consider the following variables for analysing the relations between features (correlation):</p>
 <ul>
-<li>'PassengerId': since it is replication with the line number. </li>
-<li>'Cabin': since there are too little data, we'll skip it.</li>
+<li>'PassengerId': since it is replication (shifted by 1) with the line number or the data frame index. </li>
+<li>'Cabin': since there are too little data, we'll skip this feature.</li>
 <li>'Name': Each name is unique</li>
 <li>'Ticket': as such, the textual feature is no use for analysing relation with other features.</li>
 </ul>
-<p>About missing values:</p>
-<p>Dealing with it is part of the questions (Q4)</p>
+<p><strong>About missing values:</strong></p>
+<p>We had 3 features - Cabin, Age and Embarked - concerned by missing values and since the size of the dataset is not large, we did not consider the deletion of entire observations (rows) containing missing values.
+Dealing completely with missing values is part of the questions (Q4)</p>
 
 </div>
 </div>
@@ -11997,8 +11917,8 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Features-Study">Features Study<a class="anchor-link" href="#Features-Study">&#182;</a></h2><p>Number of passengers (i.e. observations) in the data source: 891</p>
-<p>On April 15, 1912, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew according to document [7].</p>
-<p>The data provided in document [9] shows that is the training data. It represents 40% (i.e. 891/2224) of the overall population of the Titanic.</p>
+<p>On April 15, 1912, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew according to document [Wikipedia].</p>
+<p>The data provided in document [kaggleTitanic] shows that it is the training data. It represents 40% (i.e. 891/2224) of the overall population of the Titanic.</p>
 <p>In the file, the typical passenger (given by the computation of the mode of the dataframe):</p>
 <ul>
 <li>did not survived</li>
@@ -12007,7 +11927,7 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 <li>was 30 year old.</li>
 <li>was in the 3rd class </li>
 <li>paid a fare of 8.05</li>
-<li>rmbarked at Southampton</li>
+<li>embarked at Southampton</li>
 <li>had no sibling and no spouse</li>
 <li>had no parent</li>
 </ul>
@@ -12020,8 +11940,76 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We have 12 features - i.e. variables - which are either <strong>continuous or categorical</strong>.</p>
-<p><strong>The dependant feature is 'Survived' and the rest are independant variables</strong>.</p>
+<h2 id="Definitions:-Continuous-Features-vs-Categorical-Features">Definitions: Continuous Features vs Categorical Features<a class="anchor-link" href="#Definitions:-Continuous-Features-vs-Categorical-Features">&#182;</a></h2><p>Given from Document [Edx]:</p>
+<p><strong>Throughout the document, we'll use the word '<em>feature</em>' instead of the word '<em>variable</em>'. They can be used interchangeably.</strong></p>
+<ul>
+<li><strong>Continuous Features</strong></li>
+</ul>
+<p>In the case of continuous features, there exist a measurable difference between possible feature values. Feature values usually are also a subset of all real numbers:</p>
+<ul>
+<li><strong>Categorical Features</strong></li>
+</ul>
+<p>With categorical features, there is a specified number of discrete, possible feature values. These values may or may not have ordering to them. If they do have a natural ordering, they are called ordinal categorical features. Otherwise if there is no intrinsic ordering, they are called nominal categorical features.</p>
+<table>
+<thead><tr>
+<th>Example</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Distance</td>
+<td>Continuous</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>Continuous </td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Continuous </td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>Continuous</td>
+</tr>
+<tr>
+<td>Car Models</td>
+<td>Nominal </td>
+</tr>
+<tr>
+<td>Colors</td>
+<td>Nominal </td>
+</tr>
+<tr>
+<td>TV Shows</td>
+<td>Nominal</td>
+</tr>
+<tr>
+<td>High-Medium-Low</td>
+<td>Ordinal</td>
+</tr>
+<tr>
+<td>1-10 Years Old, 11-20 Years Old, 30-40 Years Old</td>
+<td>Ordinal</td>
+</tr>
+<tr>
+<td>Happy, Neutral, Sad</td>
+<td>Ordinal</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Features-Study">Features Study<a class="anchor-link" href="#Features-Study">&#182;</a></h2><p>We have 12 features - i.e. variables - which are either <strong>continuous or categorical</strong>.</p>
+<p><strong>The dependant variable is 'Survived' and the rest are independant variables</strong>.</p>
 <p>Categorical features could be split into two sub-types:</p>
 <p>ordinal feature or nominal.</p>
 
@@ -12058,6 +12046,10 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 <td>30.0</td>
 </tr>
 <tr>
+<td>median</td>
+<td>30.0</td>
+</tr>
+<tr>
 <td>mean</td>
 <td>29.377295</td>
 </tr>
@@ -12088,10 +12080,50 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </tbody>
 </table>
 <p><img src="boxplotAge.png" alt="Diagram"></p>
-<p>There are many outliers for higher ages.</p>
 <p><strong><em>Fare</em></strong>:</p>
 <p>Its type is float64.</p>
-<p>Its distribution is left-skewed</p>
+<table>
+<thead><tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>8.05</td>
+</tr>
+<tr>
+<td>mean</td>
+<td>32.2042079686</td>
+</tr>
+<tr>
+<td>std</td>
+<td>49.6934285972</td>
+</tr>
+<tr>
+<td>min</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>25%</td>
+<td>7.910400</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>14.454200</td>
+</tr>
+<tr>
+<td>75%</td>
+<td>31.000000</td>
+</tr>
+<tr>
+<td>max</td>
+<td>512.3292</td>
+</tr>
+</tbody>
+</table>
+<p><img src="boxplotFare.png" alt="Diagram"></p>
 
 </div>
 </div>
@@ -12130,6 +12162,16 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>The Fare feature distribution is left-skewed (see Fare distribution here above)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Relation-Between-Age-and-Fare-features">Relation Between <em>Age</em> and <em>Fare</em> features<a class="anchor-link" href="#Relation-Between-Age-and-Fare-features">&#182;</a></h3>
 </div>
 </div>
@@ -12149,7 +12191,7 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Conclusion:">Conclusion:<a class="anchor-link" href="#Conclusion:">&#182;</a></h3><p>There is no relation between the two continuous features as shown here below</p>
+<p>There is no relation between the two continuous features (Fare and Age) as shown here above</p>
 
 </div>
 </div>
@@ -12160,15 +12202,16 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Categorical features are:</strong></p>
-<p>'<em>PassengerId</em>', Ordinal feature</p>
-<p>'<em>Pclass</em>', Ordinal feature</p>
-<p>'<em>SibSp</em>', Ordinal feature</p>
-<p>'<em>Parch</em>', Ordinal feature</p>
-<p>'<em>Name</em>', Nominal feature (Textual feature)</p>
-<p>'<em>Sex</em>', Nominal feature</p>
-<p>'<em>Ticket</em>', Nominal feature (Textual feature)</p>
-<p>'<em>Cabin</em>', Nominal feature</p>
-<p>'<em>Embarked</em>', Nominal feature</p>
+<p>'<em>Pclass</em>', Ordinal feature (1st class &gt; 2nd Class &gt; 3rd Class in terms of confort)</p>
+<p>'<em>SibSp</em>', Ordinal feature.</p>
+<p>'<em>Parch</em>', Ordinal feature.</p>
+<p>'<em>Survived</em>', Nominal feature. Two possible values (0 = No, 1 = Yes)</p>
+<p>'<em>PassengerId</em>', Nominal feature (no rank in numbers) as identifier.</p>
+<p>'<em>Name</em>', Nominal feature (Textual feature).</p>
+<p>'<em>Sex</em>', Nominal feature. Two possible values: male or female.</p>
+<p>'<em>Ticket</em>', Nominal feature (Textual feature).</p>
+<p>'<em>Cabin</em>', Nominal feature.</p>
+<p>'<em>Embarked</em>', Nominal feature. Only 3 points of Embarcation.</p>
 
 </div>
 </div>
@@ -12188,6 +12231,7 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="NbPassengersByEmbarcationPt.png" alt="Diagram"></p>
+<p><strong>KEYS: C = Cherbourg, Q = Queenstown, S = Southampton</strong></p>
 
 </div>
 </div>
@@ -12202,7 +12246,7 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 <ul>
 <li><p><strong>Cabin</strong>: meaning some passengers shared the same cabin. Moreover, some passengers have many cabins</p>
 </li>
-<li><p><strong>Ticket</strong>: meaning some passengers are registered on the same ticket.</p>
+<li><p><strong>Ticket</strong>: meaning some passengers were registered on the same ticket.</p>
 </li>
 </ul>
 <p>The following categorical features don't have duplicates:</p>
@@ -12221,26 +12265,6 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>About Missing Values</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="MissingDataAmongFeatures.png" alt="Diagram"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Relation-between-features">Relation between features<a class="anchor-link" href="#Relation-between-features">&#182;</a></h3>
 </div>
 </div>
@@ -12250,7 +12274,8 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="PearsonCorrelationOfFeatures.png" alt="Diagram"></p>
+<p>Relation Fare vs Embarked vs Pclass
+<img src="boxplotFarevsEmbarkedvsPclass.png" alt="Diagram"></p>
 
 </div>
 </div>
@@ -12260,13 +12285,55 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Survived and Sex (male or female) are linked. It has been seen when analysing survival influencing factors.</p>
-<p>Survived and Title (Mr) are linked. Normal since Title (Mr) and Sex are strongly correlated.</p>
-<p>Pclass and Fare are inversely linked.</p>
-<p>Master and Age are inversely linked.</p>
-<p>Embarked_C and Embarked_S are strongly linked. Normal since Embarked_C, Embarked_S, Embarked_Q are built from Embarked.</p>
-<p>Age and Child are linked. Normal since child was built from Age.</p>
-<p>SibSp and Parch are linked.</p>
+<p>Relation Survived vs Age vs Title_Miss: It gives clues on:</p>
+<ul>
+<li>Age distribution according to Survival and </li>
+<li>relation between Title Miss, Survival and Age features
+<img src="SexFactorv2.png" alt="Diagram"></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Relation Survived vs Age vs Title_Mrs: It gives clues on:</p>
+<ul>
+<li>Age distribution according to Survival and </li>
+<li>relation between Title Mrs, Survival and Age features</li>
+</ul>
+<p><img src="SexFactorv3.png" alt="Diagram"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Reuse of document [HM] for building the Correlation Diagram.
+<img src="PearsonCorrelationOfFeatures.png" alt="Diagram"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Linear Correlation deduced from Pearson's Correlation Diagram:</strong></p>
+<p>Survived and Sex (female) have a linear relationship (increasing).</p>
+<p>Survived and Title (Mr) have a linear relationship (decreasing). It is not a surprise since Title (Mr) and Sex (female) are strongly correlated.</p>
+<p>Pclass and Fare have a linear relationship (decreasing).</p>
+<p>Master and Age have a linear relationship (decreasing).</p>
+<p>Point of Embarcation C and S have a strong linear relationship. It is normal since Point of Embarcation C, S, Q are built from Embarked.</p>
+<p>Age and Child have a significant linear relationship. It is normal since child was built from Age.</p>
+<p>SibSp and Parch have a linear relationship.</p>
 
 </div>
 </div>
@@ -12335,31 +12402,92 @@ Some children travelled only with a nanny, therefore parch=0 for them.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Answer-to-questions">Answer to questions<a class="anchor-link" href="#Answer-to-questions">&#182;</a></h2><ul>
-<li><strong>Q1. What are the most important factors to survival (e.g. Age, Sex, ...)?</strong></li>
+<h2 id="Answer-to-questions">Answer to questions<a class="anchor-link" href="#Answer-to-questions">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Q1. What are the most important factors to survival (e.g. Sex, Class, ...)?</strong></li>
 </ul>
 <p><strong>Title</strong>: Significantly More survival chance for Mrs, Miss and slight more chance for Master. Significantly less survival chance for Mr.</p>
-<p><strong>Sex</strong>: Significantly more survival chance for women. Significantly less survival chance for men.</p>
+<p><strong>Sex</strong>: Significantly more survival chance for Sex is female. Significantly less survival chance for sex is male.</p>
 <p><strong>Class</strong>: The first class has higher survival chance than other classes. The third class has less chance than the two others.</p>
-<p><strong>Embarked</strong>: Point of Embarcation influences the survival chance: Cherbourg is favored.</p>
+<p><strong>Embarked</strong>: Point of Embarcation influences the survival chance and Cherbourg is favored.</p>
 <p><strong>Children</strong>: Being a child (under 18) gave slightly more survival chance.</p>
 <ul>
 <li><strong>Q2. Did they apply the protocol "Women and Children first"?</strong> </li>
 </ul>
-<p>In document [7] "A disproportionate number of men were left aboard because of a "women and children first" protocol for loading lifeboats". It has been applied and the figures reflect it for Women.
+<p>In document [Wikipedia] "A disproportionate number of men were left aboard because of a "women and children first" protocol for loading lifeboats". It has been applied and the figures reflect it for Women.
 <strong>The figures confirm strongly for women and slightly for children.</strong></p>
 <ul>
-<li><strong>Q3. Is there Correlation among factors?</strong></li>
+<li><strong>Q3. Is there any linear correlation among factors?</strong></li>
 </ul>
-<p>To estlish it is it practical to use numerical values. 
-The correlation among features has been established numerically and in figure 'Pearson Correlation of Features.png' 
-The correlation works well for linear correlation but the</p>
+<p>To establish it is it practical to use numerical values. See here above in Section <em>'Relation between features'</em>
+The linear correlation among features has been established numerically and in figure 'Pearson Correlation of Features.png' provided here above</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><strong>Q4. How to deal with missing values?</strong></li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="MissingDataAmongFeatures.png" alt="Diagram"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>High percentage of missing values for Cabin feature. <strong>Nothing can be done for Cabin feature.</strong></p>
-<p>Significant percentage of missing values for Age feature but something can be done for this feature. <strong>Replace missing values for Age with the median value of the group split by title.</strong></p>
-<p>Very small percentage of missing values for Embarked feature. <strong>For the Embarked features, replacement of the actual values is possible (i.e. Southampton). They have been found in document [6].</strong></p>
+<p>Significant percentage of missing values for Age feature but something can be done for this feature. <strong>Replace missing values for Age with the median value of the group split by title.</strong> See Coding in <em>§ Processing missing values for Age</em></p>
+<table>
+<thead><tr>
+<th>Title</th>
+<th>Age (median)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Master</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Miss</td>
+<td>21.0</td>
+</tr>
+<tr>
+<td>Mr</td>
+<td>30.0</td>
+</tr>
+<tr>
+<td>Mrs</td>
+<td>35.0</td>
+</tr>
+</tbody>
+</table>
+<p>There is a very small percentage (0.2 %) of missing values for Embarked feature. <strong>For the Embarked features, replacement of the actual values is possible (i.e. Southampton). They have been found in document [DB] from the name of the passengers.</strong></p>
 
 </div>
 </div>
@@ -12369,12 +12497,11 @@ The correlation works well for linear correlation but the</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Way forward:</p>
-<p>Apply machine learning</p>
-<p>Model? Feature Engineering</p>
-<p>We'll split data into 2 files (training and test)</p>
-<p>Prediction</p>
-<p>Cross-check with crew database.</p>
+<h2 id="Way-forward:">Way forward:<a class="anchor-link" href="#Way-forward:">&#182;</a></h2><p>It would be useful but not in the scope of the assignment:</p>
+<ul>
+<li>MAKE PREDICTION: to apply machine learning (e.g. Logistic Regression) to build a model and make prediction.</li>
+<li>GET MORE DATA: to get more data and split it into training and test data. The information about crew passengers might give more insight. </li>
+</ul>
 
 </div>
 </div>
@@ -12384,37 +12511,25 @@ The correlation works well for linear correlation but the</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Documentation">Documentation<a class="anchor-link" href="#Documentation">&#182;</a></h2><p>[2] Web site: DAT210x Programming with Python for Data Science: 
-<a href="https://courses.edx.org/courses/course-v1:Microsoft+DAT210x+2T2017/info">site</a></p>
-<p>[3] Book: A Whirlwind Tour of Python by Jake VanderPlas
-<a href="http://www.oreilly.com/programming/free/files/a-whirlwind-tour-of-python.pdf">pdf</a></p>
-<p>[4] Feature Engineering:
-<a href="https://triangleinequality.wordpress.com/2013/09/08/basic-feature-engineering-with-the-titanic-data/5">site1</a>
-<a href="https://www.kaggle.com/akshaysehgal/quick-visualizations-for-eda">site2</a></p>
-<p>[5] Quick Visualizations for EDA
-<a href="https://www.kaggle.com/akshaysehgal/quick-visualizations-for-eda">site</a></p>
-<p>[6] Articles and studies
-<a href="https://www.encyclopedia-titanica.org/">site</a>
-<a href="https://www.encyclopedia-titanica.org/titanic-crew-list/">crew list</a></p>
-<p>[7] Wikipedia article: See §Survivors and victims
-<a href="https://en.wikipedia.org/wiki/RMS_Titanic">site</a></p>
-<p>[8] Article le figaro: Temoignages, Women and children first, Some men killed when trying to embark before women and children
-<a href="http://www.lefigaro.fr/histoire/archives/2017/01/04/26010-20170104ARTFIG00236-titanic-le-recit-des-survivants-publie-dans-le-figaro-en-1912.php">site</a></p>
-<p>[9] kaggle web site:
-<a href="https://www.kaggle.com/c/titanic/data">site</a></p>
-<p>[10] Matplotlib resources from Blog
-<a href="http://www.datasciencecentral.com/profiles/blogs/matplotlib-cheat-sheet">site</a></p>
-<p>[11] Python for Data Science Handbook from Blog
+<h2 id="Documentation/References">Documentation/References<a class="anchor-link" href="#Documentation/References">&#182;</a></h2><p>Here is the list of references - including Web sites, books, blog posts - used for my submission.</p>
+<p>[Edx] Web site: DAT210x Programming with Python for Data Science: 
+<a href="https://courses.edx.org/courses/course-v1:Microsoft+DAT210x+2T2017/info">EdxSite</a></p>
+<p>[FE] Feature Engineering:
+<a href="https://triangleinequality.wordpress.com/2013/09/08/basic-feature-engineering-with-the-titanic-data/5">site</a></p>
+<p>[DB] Encyclopedia Titanica database:
+<a href="https://www.encyclopedia-titanica.org/">site</a></p>
+<p>[Wikipedia] Wikipedia article - See §Survivors and victims:
+<a href="https://en.wikipedia.org/wiki/RMS_Titanic">wikipedia</a></p>
+<p>[kaggleTitanic] kaggle web site:
+<a href="https://www.kaggle.com/c/titanic/data">kaggleTitanic</a></p>
+<p>[Plot] Matplotlib resources from Blog:
+<a href="http://www.datasciencecentral.com/profiles/blogs/matplotlib-cheat-sheet">blog</a></p>
+<p>[Hdbk] Python for Data Science Handbook from Blog:
 <a href="http://www.datasciencecentral.com/profiles/blogs/book-python-data-science-handbook?utm_content=buffer09a5c&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">blog</a></p>
-<p>[12] Heatmap example:
-<a href="https://www.kaggle.com/arthurtok/introduction-to-ensembling-stacking-in-python">site</a></p>
-<p>[13] GitHub repository:
-<a href="https://github.com/jakevdp/WhirlwindTourOfPython">site</a></p>
-<p>[14] How to treat missing values in you data from DataScienceCentral Blog + Alternate
-<a href="http://www.datasciencecentral.com/profiles/blogs/how-to-treat-missing-values-in-your-data-1">site1</a>
-<a href="https://clevertap.com/blog/how-to-treat-missing-values-in-your-data-part-i/">site2</a></p>
-<p>[15] valuable kaggle notebook
-<a href="https://www.kaggle.com/viveksrinivasan/zillow-eda-on-missing-values-multicollinearity">site</a></p>
+<p>[HM] Heatmap example:
+<a href="https://www.kaggle.com/arthurtok/introduction-to-ensembling-stacking-in-python">kaggle</a></p>
+<p>[MV] How to treat missing values in you data from Article:
+<a href="https://clevertap.com/blog/how-to-treat-missing-values-in-your-data-part-i/">Article</a></p>
 
 </div>
 </div>
