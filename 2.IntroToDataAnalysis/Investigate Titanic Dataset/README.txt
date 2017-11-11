@@ -1,2 +1,2 @@
-command:
-ipython nbconvert --to html "Titanic Dataset Analysis.ipynb"
+The report is: 
+Titanic Dataset Analysis.ipynb
